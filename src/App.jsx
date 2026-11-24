@@ -25,17 +25,27 @@ import {
 // ============================================================================
 // FIREBASE INITIALIZATION (OUTSIDE COMPONENT)
 // ============================================================================
-const firebaseConfig =
-  typeof __firebase_config !== 'undefined'
-    ? JSON.parse(__firebase_config)
-    : {
-        apiKey: import.meta.env.VITE_FIREBASE_API_KEY || 'AIzaSyBUq7qTeSbkJgM_bwbyD1SwjXxX_siPKxo',
-        authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN || 'synth-86206.firebaseapp.com',
-        projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID || 'synth-86206',
-        storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET || 'synth-86206.firebasestorage.app',
-        messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID || '839402159812',
-        appId: import.meta.env.VITE_FIREBASE_APP_ID || '1:839402159812:web:97b26a8d5695daa8fe9391'
-      };
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyBUq7qTeSbkJgM_bwbyD1SwjXxX_siPKxo",
+  authDomain: "synth-86206.firebaseapp.com",
+  projectId: "synth-86206",
+  storageBucket: "synth-86206.firebasestorage.app",
+  messagingSenderId: "839402159812",
+  appId: "1:839402159812:web:97b26a8d5695daa8fe9391",
+  measurementId: "G-DX2L32XF25"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
