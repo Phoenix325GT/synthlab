@@ -25,6 +25,14 @@ import {
 // ============================================================================
 // FIREBASE INITIALIZATION (OUTSIDE COMPONENT)
 // ============================================================================
+
+// Import the functions you need from the SDKs you need
+import { getAnalytics } from "firebase/analytics";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig =
   typeof __firebase_config !== 'undefined'
     ? JSON.parse(__firebase_config)
@@ -38,7 +46,9 @@ const firebaseConfig =
         measurementId: 'G-DX2L32XF25'
       };
 
+// Initialize Firebase
 const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
 const auth = getAuth(app);
 const db = getFirestore(app);
 const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-app-id';
