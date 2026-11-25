@@ -29,9 +29,13 @@ const firebaseConfig =
   typeof __firebase_config !== 'undefined'
     ? JSON.parse(__firebase_config)
     : {
-        apiKey: 'demo-api-key',
-        authDomain: 'demo-synthlab.firebaseapp.com',
-        projectId: 'demo-synthlab'
+        apiKey: 'AIzaSyBUq7qTeSbkJgM_bwbyD1SwjXxX_siPKxo',
+        authDomain: 'synth-86206.firebaseapp.com',
+        projectId: 'synth-86206',
+        storageBucket: 'synth-86206.firebasestorage.app',
+        messagingSenderId: '839402159812',
+        appId: '1:839402159812:web:97b26a8d5695daa8fe9391',
+        measurementId: 'G-DX2L32XF25'
       };
 
 const app = initializeApp(firebaseConfig);
